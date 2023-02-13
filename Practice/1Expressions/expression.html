@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/js/angular.min.js"></script>
+    <title>Expression</title>
+</head>
+
+<body class="container" ng-app="">
+    <h1>Expression in AngularJS</h1>
+    <hr>
+    <input type="text" name="name" placeholder="Test" ng-model="expression">
+    <h3>Here is the value:- {{expression}}</h3>
+    This is the value : {{ 5 + 5}}
+    <hr>
+    <div ng-init="myColor='white'">
+        Example: Let AngularJS change the value of CSS properties.<br>
+        <input type="text" placeholder="Type color name" style="background-color:{{myColor}}" ng-model="myColor">
+    </div>
+    <br>
+
+    <div ng-init="quantity=1;cost=5">
+        AngularJS numbers are like JavaScript numbers: <br>
+        <p>Total in dollar: {{ quantity * cost }}</p>
+    </div>
+
+    <br>
+    <div ng-init="quantity=1;cost=5">
+        Same example using ng-bind:
+        <p>Total in dollar: <span ng-bind="quantity * cost"></span></p>
+    </div>
+
+    <hr>
+    AngularJS strings are like JavaScript strings:<br>
+    <div ng-init="firstName='Sanjay' ; lastName='Vishwakarna'">
+        <p> The name is : {{firstName + " "+lastName}}</p>
+        <p> The name is using ng-bind: <span ng-bind="firstName + ' ' + lastName"> </span></p>
+
+    </div>
+
+    <br>
+
+    <hr>
+    AngularJS objects are like JavaScript objects: <br>
+    <div ng-init="person={firstName:'Sahil', lastName:'mourya'}">
+        <p>The name is {{person.lastName}}</p>
+        <p>The name is using ng-bind : <span ng-bind="person.lastName"></span></p>
+    </div>
+
+    <hr>
+
+    <div ng-init="points=[1,15,19,26,40]">
+        AngularJS arrays are like JavaScript arrays:<br>
+        <p>The third result is {{points[3]}}</p>
+        <p>The third result is using ng-bind :<span ng-bind="points[4]"></span></p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model</title>
+    <script src="/js/angular.min.js"> </script>
+    <script src="file.js"></script>
+
+</head>
+
+<body>
+    <p>
+        With the ng-model directive you can bind the value of an input field to a variable created in AngularJS.
+    </p>
+    <div ng-app="myApp" ng-controller="nameCtrl">
+        Name:<input ng-model="name">
+    </div>
+
+    <br>
+    <hr>
+
+    <p>
+        Two-Way Binding -
+        The binding goes both ways. If the user changes the value inside the input field, the AngularJS property will
+        also change its value:
+    </p>
+
+    <div ng-app="myApp1" ng-controller="twoBindCtrl">
+        Name : <input type="text" ng-model="name1">
+        <h3>You entered: {{name1}}</h3>
+    </div>
+
+    <script>
+        var twoBinding = angular.module('myApp1', []);
+        twoBinding.controller('twoBindCtrl', function ($scope) {
+            $scope.name1 = "Test";
+        });
+    </script>
+
+   
+</body>
+
+</html>
